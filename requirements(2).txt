@@ -1,0 +1,6 @@
+# Customer Churn Prediction Project
+# Python 3.12+ recommended
+
+pandas==2.3.2
+numpy==2.3.2
+scikit-learn==1.8.0
