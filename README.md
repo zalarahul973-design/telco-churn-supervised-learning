@@ -1,77 +1,126 @@
-# 🚀 Telco Customer Churn Prediction
-
-### Supervised Learning — Customer Churn Classification
+<h1 align="center">🚀 Telco Customer Churn Prediction</h1>
 
 <p align="center">
-  <b>KNN</b> • <b>SVM</b> • <b>Decision Tree</b> • <b>SMOTE</b> •
-  <b>Hyperparameter Tuning</b> • <b>Error Analysis</b> • <b>Pipeline</b>
+  <b>📊 Supervised Learning • Churn Detection • Customer Retention</b>
 </p>
 
+
+
+<img width="1672" height="940" alt="019c6379-3459-438e-b7cf-e19326ba860c" src="https://github.com/user-attachments/assets/a9f17197-e983-4454-983f-488daefd97f2" />
+
+### 🖱️ Click the Image Above
+
 <p align="center">
-  <img src="https://img.shields.io/badge/Python-3.13-blue?logo=python&logoColor=white">
-  <img src="https://img.shields.io/badge/Pandas-Data%20Analysis-150458?logo=pandas&logoColor=white">
-  <img src="https://img.shields.io/badge/NumPy-Numerical%20Computing-013243?logo=numpy&logoColor=white">
-  <img src="https://img.shields.io/badge/Scikit--learn-Machine%20Learning-F7931E?logo=scikit-learn&logoColor=white">
-  <img src="https://img.shields.io/badge/Imbalanced--learn-SMOTE-orange">
-  <img src="https://img.shields.io/badge/Jupyter-Notebook-F37626?logo=jupyter&logoColor=white">
+
+<a href="#-project-objectives">
+🎯 <b>CHURN PREDICTION</b>
+</a>
+&nbsp;&nbsp; ➜ &nbsp;&nbsp;
+
+<a href="#-class-imbalance--smote">
+⚖️ <b>CLASS BALANCING</b>
+</a>
+&nbsp;&nbsp; ➜ &nbsp;&nbsp;
+
+<a href="#-model-evaluation">
+📊 <b>MODEL EVALUATION</b>
+</a>
+&nbsp;&nbsp; ➜ &nbsp;&nbsp;
+
+<a href="#-error-analysis">
+🔎 <b>ERROR ANALYSIS</b>
+</a>
+
+</p>
+
+## 🏷️ Skills Badges
+<p align="center">
+
+![Python](https://img.shields.io/badge/Python-3.13-blue?style=for-the-badge\&logo=python)
+![Pandas](https://img.shields.io/badge/Pandas-Data%20Analysis-purple?style=for-the-badge\&logo=pandas)
+![Scikit Learn](https://img.shields.io/badge/Scikit--Learn-Machine%20Learning-orange?style=for-the-badge\&logo=scikit-learn)
+![Jupyter](https://img.shields.io/badge/Jupyter-Notebook-orange?style=for-the-badge\&logo=jupyter)
+![SMOTE](https://img.shields.io/badge/SMOTE-Imbalanced%20Learning-green?style=for-the-badge)
+
 </p>
 
 ---
 
-## 📌 Project Overview
+## 📌 Project Goal
 
 **Telco Customer Churn Prediction** is a Machine Learning project that predicts whether a telecom customer is likely to **churn (leave the service)** or **stay**.
 
 The project follows a complete supervised-learning workflow:
 
-```text
-Dataset → EDA → Data Cleaning → Feature Engineering
-       → Encoding → Scaling → Train/Test Split
-       → SMOTE → KNN / SVM / Decision Tree
-       → Hyperparameter Tuning → Evaluation
-       → Error Analysis → Final Pipeline
-```
+<img width="1312" height="1199" alt="f2ef1b72-0fb4-438a-aec2-c903df641356" src="https://github.com/user-attachments/assets/edb7be02-503b-417c-975e-bfd7f7db4205" />
+
+
 
 ---
 
 ## 🎯 Project Objectives
 
-- Understand the Telco customer churn dataset.
-- Perform Exploratory Data Analysis (EDA).
-- Clean and preprocess customer data.
-- Perform feature engineering.
-- Encode categorical variables and scale numerical variables.
-- Handle class imbalance using **SMOTE**.
-- Build KNN, SVM and Decision Tree classifiers.
-- Tune KNN `k`, SVM `C`, and Decision Tree depth.
-- Compare Accuracy, Precision, Recall, F1 Score and ROC-AUC.
-- Perform false-negative error analysis.
-- Identify important churn-prediction features.
-- Create and save a final prediction pipeline.
+The main objectives of this **Telco Customer Churn Prediction** project are:
 
----
+* 📂 Understand the **Telco Customer Churn dataset**.
+* 🔍 Perform **Exploratory Data Analysis (EDA)**.
+* 🧹 Clean and preprocess customer data.
+* 🛠️ Perform **feature engineering**.
+* 🔢 Encode categorical variables and scale numerical features.
+* ⚖️ Handle class imbalance using **SMOTE**.
+* 🤖 Build **KNN, SVM, and Decision Tree** classification models.
+* 🎯 Tune **KNN `k`**, **SVM `C`**, and **Decision Tree depth**.
+* 📊 Compare **Accuracy, Precision, Recall, F1 Score, and ROC-AUC**.
+* 🔎 Perform **False-Negative Error Analysis**.
+* 🌟 Identify important features for **customer churn prediction**.
+* 🚀 Create and save a **final prediction pipeline**.
 
+
+```
+
+```
 # 📊 Dataset
 
-The uploaded dataset contains **7,043 customer records and 21 columns**.
+The **Telco Customer Churn** dataset contains **7,043 customer records and 21 columns**.
+
+| Category                | Details                                              |
+| ----------------------- | ---------------------------------------------------- |
+| 👥 Total Customers      | **7,043**                                            |
+| 📊 Total Columns        | **21**                                               |
+| 🎯 Target Variable      | `Churn`                                              |
+| 🏷️ Problem Type        | Binary Classification                                |
+| 🤖 Learning Type        | Supervised Learning                                  |
+| 🔴 Positive Class       | `Yes` — Customer Churned                             |
+| 🟢 Negative Class       | `No` — Customer Stayed                               |
+| 🆔 Identifier           | `customerID`                                         |
+| 💰 Numerical Features   | `tenure`, `MonthlyCharges`, `TotalCharges`           |
+| 📝 Categorical Features | `Contract`, `InternetService`, `PaymentMethod`, etc. |
 
 ### 🎯 Target Variable
 
-`Churn`
+| Value    | Meaning                    |
+| -------- | -------------------------- |
+| 🟢 `No`  | Customer did **not** churn |
+| 🔴 `Yes` | Customer **churned**       |
 
-- `Yes` → Customer churned
-- `No` → Customer did not churn
+### 🔍 Main Features
 
-### 🔍 Important Features
+| Feature           | Description                       |
+| ----------------- | --------------------------------- |
+| `customerID`      | Unique customer identifier        |
+| `gender`          | Customer gender                   |
+| `SeniorCitizen`   | Senior citizen indicator          |
+| `Partner`         | Whether customer has a partner    |
+| `Dependents`      | Whether customer has dependents   |
+| `tenure`          | Number of months with the company |
+| `PhoneService`    | Phone service subscription        |
+| `InternetService` | Internet service type             |
+| `Contract`        | Contract type                     |
+| `PaymentMethod`   | Customer payment method           |
+| `MonthlyCharges`  | Monthly service charges           |
+| `TotalCharges`    | Total customer charges            |
+| `Churn`           | 🎯 Target — customer churn status |
 
-`gender`, `SeniorCitizen`, `Partner`, `Dependents`, `tenure`, `PhoneService`,
-`MultipleLines`, `InternetService`, `OnlineSecurity`, `OnlineBackup`,
-`DeviceProtection`, `TechSupport`, `StreamingTV`, `StreamingMovies`,
-`Contract`, `PaperlessBilling`, `PaymentMethod`, `MonthlyCharges`, `TotalCharges`
-
-> `customerID` is treated as an identifier and is dropped before model training.
-
----
 
 # 🧹 Data Cleaning & Feature Engineering
 
@@ -210,25 +259,43 @@ Best F1 Score = 0.7967
 
 # 📊 Exploratory Data Analysis
 
-## 🎯 Customer Churn Distribution
+## 🎯 Customer Churn Count
+<img width="549" height="393" alt="image" src="https://github.com/user-attachments/assets/1f8cd9ba-ab7b-41df-9a3e-567b39d72601" />
 
-![Customer Churn Distribution](docs/screenshots/01-churn-distribution.png)
 
-## 📄 Churn Rate by Contract Type
+## 📄 Tenure Distribution,Monthly Charges Distribution and Total Charges Distribution
 
-![Churn Rate by Contract](docs/screenshots/02-contract-churn.png)
+<img width="1589" height="390" alt="image" src="https://github.com/user-attachments/assets/6233d652-85ca-41e8-9ed7-c6874af8d9e7" />
+
+
+## Contract,Internet Service and Payment Method
+
+<img width="1778" height="489" alt="image" src="https://github.com/user-attachments/assets/d063975f-430e-43ec-9da3-f26439d9f4c0" />
+
+
+##  📊 Churn Rate by Contract Type
+
+<img width="790" height="490" alt="image" src="https://github.com/user-attachments/assets/56769635-f8f5-4eed-a398-9607a611b125" />
+
+
+
+## 📊 Churn Rate by Tenure Bucket
+
+<img width="790" height="490" alt="image" src="https://github.com/user-attachments/assets/583e946c-40de-4953-8464-59d3aef9e2e0" />
+
+
 
 ## 💰 Monthly Charges vs Churn
 
-![Monthly Charges vs Churn](docs/screenshots/03-monthly-charges-churn.png)
+<img width="618" height="470" alt="image" src="https://github.com/user-attachments/assets/d1e18f42-b292-4e4a-ae44-eb7f47b8076a" />
 
-## 📈 Tenure Distribution by Churn
 
-![Tenure Distribution](docs/screenshots/04-tenure-churn.png)
+
 
 ## 🔥 Correlation Heatmap
 
-![Correlation Heatmap](docs/screenshots/05-correlation-heatmap.png)
+<img width="910" height="690" alt="image" src="https://github.com/user-attachments/assets/acdf0ca2-0134-4b81-a2f9-113bbd43109e" />
+
 
 ---
 
@@ -284,48 +351,16 @@ The uploaded notebook reports:
 | 4 | `InternetService_Fiber optic` | **0.0790** |
 | 5 | `MonthlyCharges` | **0.0749** |
 
-![Feature Importance](docs/screenshots/06-feature-importance.png)
 
-### 💡 Business Interpretation
 
-Contract type, tenure, fiber-optic service and monthly charges are among the strongest Decision Tree features in the notebook's reported feature-importance analysis.
+## 🌳 Decision Tree - First 3 Levels
+<img width="1570" height="812" alt="image" src="https://github.com/user-attachments/assets/5dee80e3-ef59-40f9-a76d-13fa9867df41" />
 
----
 
-# 🔍 Error Analysis
+# 📊 Precision vs Recall - All 4 Models
 
-The notebook reports:
+<img width="889" height="590" alt="image" src="https://github.com/user-attachments/assets/1c16c724-dee2-49f9-95ce-788011273f6b" />
 
-```text
-Total False Negatives = 43
-
-Average Tenure = 25.33 months
-Average MonthlyCharges = 67.87
-```
-
-False-negative contract distribution:
-
-```text
-One year → 95.35%
-Two year → 4.65%
-```
-
-Overall churner profile:
-
-```text
-Average Tenure = 17.98 months
-Average MonthlyCharges = 74.44
-```
-
-### Key Observation
-
-The notebook concludes that the model mainly misses churners with **longer tenure and lower MonthlyCharges**. Most missed customers have one-year contracts.
-
----
-
-# 📊 Recall Comparison
-
-![SMOTE Recall Comparison](docs/screenshots/07-smote-recall.png)
 
 ---
 
@@ -391,21 +426,16 @@ The notebook concludes that the model mainly misses churners with **longer tenur
 # 📁 Project Structure
 
 ```text
-Telco_Customer_Churn/
+CustomerChurn_SupervisedLearning/
 │
 ├── README.md
 ├── CustomerChurn_SupervisedLearning.ipynb
-├── Telco-Customer-Churn(3).csv
-│
-└── docs/
-    └── screenshots/
-        ├── 01-churn-distribution.png
-        ├── 02-contract-churn.png
-        ├── 03-monthly-charges-churn.png
-        ├── 04-tenure-churn.png
-        ├── 05-correlation-heatmap.png
-        ├── 06-feature-importance.png
-        └── 07-smote-recall.png
+├── Telco-Customer-Churn.csv
+├── project_theory.md
+├── churn_model.pkl
+├── reduirements(2).txt
+├── summary_report.md
+└── video1033299810.mp4
 ```
 
 ---
@@ -494,13 +524,41 @@ CustomerChurn_SupervisedLearning.ipynb
 
 # 🏁 Conclusion
 
-The **Telco Customer Churn Prediction** project demonstrates a complete supervised-learning workflow for identifying customers who may leave a telecom service.
+The **Telco Customer Churn Prediction** project demonstrates an end-to-end **Supervised Learning workflow** for identifying customers who are likely to leave a telecom service.
 
-It covers data cleaning, EDA, feature engineering, encoding, scaling, SMOTE, KNN, SVM, Decision Tree, hyperparameter tuning, evaluation, error analysis, feature importance and final pipeline creation.
+### 📌 Project Covers
 
-The uploaded notebook reports **0.8850 recall for the SMOTE-based Decision Tree workflow**, making minority-class identification a key result of the project.
+* 🧹 **Data Cleaning**
+* 🔍 **Exploratory Data Analysis (EDA)**
+* 🛠️ **Feature Engineering**
+* 🔢 **Categorical Encoding**
+* 📏 **Feature Scaling**
+* ⚖️ **SMOTE for Class Imbalance**
+* 🤖 **KNN Classification**
+* 🎯 **SVM Classification**
+* 🌳 **Decision Tree Classification**
+* 🎚️ **Hyperparameter Tuning**
+* 📊 **Model Evaluation**
+* 🔎 **False-Negative Error Analysis**
+* 🌟 **Feature Importance**
+* 🚀 **Final Prediction Pipeline**
+
+### ⭐ Key Result
+
+The uploaded notebook reports a **Recall of 0.8850** for the **SMOTE-based Decision Tree workflow**.
+
+This highlights the importance of **class-imbalance handling and recall** when the main objective is to identify as many potential churn customers as possible.
+
+### 🚀 Final Takeaway
+
+> **Better churn identification → Earlier customer retention action → Reduced customer loss**
 
 ---
+
+<p align="center">
+  <b>📡 Predict Churn • 📊 Analyze Data • 🤖 Build Models • 🚀 Improve Retention</b>
+</p>
+
 
 # 👨‍💻 Author
 
