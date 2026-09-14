@@ -81,46 +81,53 @@ The main objectives of this **Telco Customer Churn Prediction** project are:
 ```
 # 📊 Dataset
 
+<table bgcolor="#f3f4f6">
+<tr>
+<td>
+
 The **Telco Customer Churn** dataset contains **7,043 customer records and 21 columns**.
 
-| Category                | Details                                              |
-| ----------------------- | ---------------------------------------------------- |
-| 👥 Total Customers      | **7,043**                                            |
-| 📊 Total Columns        | **21**                                               |
-| 🎯 Target Variable      | `Churn`                                              |
-| 🏷️ Problem Type        | Binary Classification                                |
-| 🤖 Learning Type        | Supervised Learning                                  |
-| 🔴 Positive Class       | `Yes` — Customer Churned                             |
-| 🟢 Negative Class       | `No` — Customer Stayed                               |
-| 🆔 Identifier           | `customerID`                                         |
-| 💰 Numerical Features   | `tenure`, `MonthlyCharges`, `TotalCharges`           |
+| Category | Details |
+|---|---|
+| 👥 Total Customers | **7,043** |
+| 📊 Total Columns | **21** |
+| 🎯 Target Variable | `Churn` |
+| 🏷️ Problem Type | Binary Classification |
+| 🤖 Learning Type | Supervised Learning |
+| 🔴 Positive Class | `Yes` — Customer Churned |
+| 🟢 Negative Class | `No` — Customer Stayed |
+| 🆔 Identifier | `customerID` |
+| 💰 Numerical Features | `tenure`, `MonthlyCharges`, `TotalCharges` |
 | 📝 Categorical Features | `Contract`, `InternetService`, `PaymentMethod`, etc. |
 
 ### 🎯 Target Variable
 
-| Value    | Meaning                    |
-| -------- | -------------------------- |
-| 🟢 `No`  | Customer did **not** churn |
-| 🔴 `Yes` | Customer **churned**       |
+| Value | Meaning |
+|---|---|
+| 🟢 `No` | Customer did **not** churn |
+| 🔴 `Yes` | Customer **churned** |
 
 ### 🔍 Main Features
 
-| Feature           | Description                       |
-| ----------------- | --------------------------------- |
-| `customerID`      | Unique customer identifier        |
-| `gender`          | Customer gender                   |
-| `SeniorCitizen`   | Senior citizen indicator          |
-| `Partner`         | Whether customer has a partner    |
-| `Dependents`      | Whether customer has dependents   |
-| `tenure`          | Number of months with the company |
-| `PhoneService`    | Phone service subscription        |
-| `InternetService` | Internet service type             |
-| `Contract`        | Contract type                     |
-| `PaymentMethod`   | Customer payment method           |
-| `MonthlyCharges`  | Monthly service charges           |
-| `TotalCharges`    | Total customer charges            |
-| `Churn`           | 🎯 Target — customer churn status |
+| Feature | Description |
+|---|---|
+| `customerID` | Unique customer identifier |
+| `gender` | Customer gender |
+| `SeniorCitizen` | Senior citizen indicator |
+| `Partner` | Whether customer has a partner |
+| `Dependents` | Whether customer has dependents |
+| `tenure` | Number of months with the company |
+| `PhoneService` | Phone service subscription |
+| `InternetService` | Internet service type |
+| `Contract` | Contract type |
+| `PaymentMethod` | Customer payment method |
+| `MonthlyCharges` | Monthly service charges |
+| `TotalCharges` | Total customer charges |
+| `Churn` | 🎯 Target — customer churn status |
 
+</td>
+</tr>
+</table>
 
 # 🧹 Data Cleaning & Feature Engineering
 
