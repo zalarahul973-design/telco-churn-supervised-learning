@@ -570,56 +570,90 @@ CustomerChurn_SupervisedLearning/
 
 # ⚙️ Installation
 
+Follow the steps below to install the required Python libraries and run the project.
+
+## 📦 Install Required Libraries
+
+Open **Command Prompt / Terminal** and run:
+
 ```bash
 pip install pandas numpy matplotlib seaborn scikit-learn imbalanced-learn jupyter
 ```
 
-Start Jupyter:
+### 📚 Libraries Used
+
+* 🐼 **Pandas** — Data manipulation and analysis
+* 🔢 **NumPy** — Numerical computing
+* 📊 **Matplotlib** — Data visualization
+* 🎨 **Seaborn** — Statistical visualization
+* 🤖 **Scikit-learn** — Machine learning algorithms
+* ⚖️ **Imbalanced-learn** — SMOTE and imbalanced-data handling
+* 📓 **Jupyter** — Running the notebook
+
+---
+
+## ▶️ Start Jupyter Notebook
+
+After installation, start Jupyter Notebook using:
 
 ```bash
 jupyter notebook
 ```
 
-Open:
+## 📓 Open the Project
+
+Open the following notebook:
 
 ```text
 CustomerChurn_SupervisedLearning.ipynb
 ```
 
----
 
+---
 # ▶️ How to Run
 
+Follow the steps below to run the **Customer Churn Prediction** project from start to finish.
+
+### 🚀 Project Execution Steps
+
 ```text
-1. Load the dataset
-2. Inspect and understand the data
-3. Perform EDA
-4. Clean TotalCharges
-5. Create engineered features
-6. Encode categorical variables
-7. Split train and test data
-8. Scale numerical features
-9. Apply SMOTE to training data
-10. Train KNN, SVM and Decision Tree
-11. Tune model parameters
-12. Evaluate models
-13. Perform error analysis
-14. Identify important features
-15. Save/load the final pipeline
+1️⃣  Load the dataset
+2️⃣  Inspect and understand the data
+3️⃣  Perform Exploratory Data Analysis (EDA)
+4️⃣  Clean and convert TotalCharges
+5️⃣  Create engineered features
+6️⃣  Encode categorical variables
+7️⃣  Split data into training and testing sets
+8️⃣  Scale numerical features
+9️⃣  Apply SMOTE to the training data
+🔟  Train KNN, SVM and Decision Tree models
+1️⃣1️⃣ Tune model hyperparameters
+1️⃣2️⃣ Evaluate model performance
+1️⃣3️⃣ Perform error analysis
+1️⃣4️⃣ Identify important features
+1️⃣5️⃣ Save and load the final ML pipeline
 ```
+
+### ✅ Final Output
+
+After completing all the steps, the trained pipeline can be used to:
+
+🎯 **Predict whether a customer is likely to churn or stay.**
 
 ---
 
 # 💡 Key Learnings
 
-- Customer churn can be treated as a supervised binary classification problem.
-- Feature scaling is important for KNN and SVM.
-- SMOTE can improve minority-class recall.
-- Decision Trees provide interpretable feature importance.
-- Recall is important when the business wants to identify as many potential churners as possible.
-- False-negative analysis helps identify customer groups that the model is missing.
+Through this **Customer Churn Prediction** project, the following key concepts and practical insights were learned:
 
----
+* 🎯 **Binary Classification:** Customer churn can be modeled as a **supervised binary classification problem**.
+* 📏 **Feature Scaling:** Feature scaling is especially important for **KNN and SVM**, as these algorithms are sensitive to feature magnitude.
+* ⚖️ **SMOTE:** **SMOTE** can help improve **minority-class recall** by balancing the training data.
+* 🌳 **Interpretability:** **Decision Trees** provide useful and easy-to-understand **feature importance**.
+* 🔍 **Recall:** Recall is important when the business goal is to identify as many **potentially churning customers** as possible.
+* 🚨 **False-Negative Analysis:** Analyzing false negatives helps identify **customer groups that the model fails to detect**.
+* 📊 **Model Evaluation:** Comparing multiple evaluation metrics provides a better understanding of overall model performance.
+
 
 # 🚀 Future Improvements
 
