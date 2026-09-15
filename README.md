@@ -479,38 +479,39 @@ The uploaded notebook reports:
 # 🔄 Machine Learning Workflow
 
 ```text
-                    TELCO DATASET
+                    📊 TELCO DATASET
                           ↓
-                 Data Understanding
+                 🔍 Data Understanding
                           ↓
-                    EDA & Cleaning
+                    🧹 EDA & Cleaning
                           ↓
-                Feature Engineering
+                ⚙️ Feature Engineering
                           ↓
-              Encoding + StandardScaler
+              🔢 Encoding + StandardScaler
                           ↓
-                  Train-Test Split
+                  ✂️ Train-Test Split
                           ↓
-                       SMOTE
+                       ⚖️ SMOTE
                           ↓
               ┌───────────┼───────────┐
               ↓           ↓           ↓
-             KNN         SVM    Decision Tree
+             🔢 KNN      🧠 SVM     🌳 Decision Tree
               ↓           ↓           ↓
-          Hyperparameter Tuning
-                    ↓
-              Model Evaluation
-                    ↓
-               Error Analysis
-                    ↓
-              Feature Importance
-                    ↓
-               Final Pipeline
-                    ↓
-              Churn Prediction
+             ⚙️ Hyperparameter Tuning
+                          ↓
+                  📊 Model Evaluation
+                          ↓
+                   🔎 Error Analysis
+                          ↓
+                  ⭐ Feature Importance
+                          ↓
+                   🚀 Final Pipeline
+                          ↓
+                  🎯 Churn Prediction
 ```
 
----
+> 🖤 **End-to-End Machine Learning Workflow for Customer Churn Prediction**
+
 
 # 📌 Topics Covered
 
