@@ -131,47 +131,90 @@ The **Telco Customer Churn** dataset contains **7,043 customer records and 21 co
 
 # 🧹 Data Cleaning & Feature Engineering
 
-### `TotalCharges`
-Converted from object/text to numeric. Blank values are treated as missing and filled with the median.
+## `TotalCharges`
 
-### `tenure_group`
+* Converted `TotalCharges` from **object/text** to **numeric**.
+* Blank values were treated as **missing values**.
+* Missing values were filled using the **median**.
 
-```text
-New      → 0–12 months
-Mid      → 13–36 months
-Senior   → 37–60 months
-Loyal    → 61–72 months
-```
+## `tenure_group`
 
-### `num_services`
-Counts the customer's subscribed services across OnlineSecurity, OnlineBackup, DeviceProtection, TechSupport, StreamingTV and StreamingMovies.
+Customer tenure was divided into four groups:
 
-### `AutoPay`
-Created from the customer's payment method.
+| Group        | Tenure       |
+| ------------ | ------------ |
+| 🆕 **New**   | 0–12 months  |
+| 🔄 **Mid**   | 13–36 months |
+| ⭐ **Senior** | 37–60 months |
+| 💎 **Loyal** | 61–72 months |
 
----
+## `num_services`
+
+Created `num_services` to count the total number of subscribed services for each customer.
+
+The following services were included:
+
+* 🔐 OnlineSecurity
+* 💾 OnlineBackup
+* 🛡️ DeviceProtection
+* 🛠️ TechSupport
+* 📺 StreamingTV
+* 🎬 StreamingMovies
+
+## `AutoPay`
+
+Created the `AutoPay` feature based on the customer's **PaymentMethod**.
+
+* **Yes** → Automatic payment method
+* **No** → Non-automatic payment method
+
 
 # 🔢 Encoding & Scaling
 
-Binary Yes/No fields are mapped to:
+## 🔘 Binary Encoding
+
+Binary **Yes/No** features are converted into numerical values:
 
 ```text
-Yes → 1
-No  → 0
+✅ Yes → 1
+❌ No  → 0
 ```
 
-Categorical variables are one-hot encoded.
-
-StandardScaler is applied to:
-
-```text
-tenure
-MonthlyCharges
-TotalCharges
-num_services
-```
+This converts binary categorical data into a format that can be easily used by machine learning models.
 
 ---
+
+## 🏷️ One-Hot Encoding
+
+Categorical variables with multiple categories are converted using **One-Hot Encoding**.
+
+🔹 Each category is represented as a separate binary column.
+🔹 This prevents the model from assuming any numerical relationship between categories.
+
+---
+
+## 📏 Feature Scaling
+
+`StandardScaler` is applied to the following numerical features:
+
+```text
+📊 tenure
+💰 MonthlyCharges
+💵 TotalCharges
+🔢 num_services
+```
+
+### ⚙️ Standardization
+
+`StandardScaler` transforms the numerical features to have:
+
+```text
+📌 Mean ≈ 0
+📌 Standard Deviation ≈ 1
+```
+
+This ensures that features are on a similar scale and helps improve the performance of **scale-sensitive machine learning algorithms**.
+
 
 # ✂️ Train-Test Split
 
