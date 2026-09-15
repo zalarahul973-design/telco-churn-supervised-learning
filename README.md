@@ -215,15 +215,18 @@ Categorical variables with multiple categories are converted using **One-Hot Enc
 
 This ensures that features are on a similar scale and helps improve the performance of **scale-sensitive machine learning algorithms**.
 
-
 # ✂️ Train-Test Split
 
+The dataset is divided into **Training** and **Testing** sets to evaluate the machine learning model effectively.
+
+### 📊 Data Distribution
+
 ```text
-80% → Training Data
-20% → Testing Data
+🟢 80% → Training Data
+🔵 20% → Testing Data
 ```
 
-The notebook uses:
+### ⚙️ Parameters Used
 
 ```python
 test_size=0.20
@@ -231,81 +234,124 @@ random_state=42
 stratify=y
 ```
 
+### 🔍 Parameter Explanation
+
+* 📚 **`test_size=0.20`** → Uses **20% of the data for testing** and 80% for training.
+* 🎯 **`random_state=42`** → Ensures the same train-test split every time.
+* ⚖️ **`stratify=y`** → Maintains the same class distribution in both training and testing datasets.
+
+This helps create a **reliable and balanced evaluation** of the machine learning models.
+
 ---
 
 # ⚖️ Class Imbalance — SMOTE
 
-The project applies **SMOTE (Synthetic Minority Over-sampling Technique)** to the training data.
+Customer churn datasets can contain an **imbalanced target variable**, where one class has significantly more samples than the other.
+
+To address this problem, the project applies **SMOTE (Synthetic Minority Over-sampling Technique)** to the **training data**.
+
+## 🔄 SMOTE Workflow
 
 ```text
-Training Data
-     ↓
-   SMOTE
-     ↓
-Balanced Training Data
-     ↓
-   Models
+📊 Training Data
+       ↓
+   ⚙️ SMOTE
+       ↓
+⚖️ Balanced Training Data
+       ↓
+🤖 Machine Learning Models
 ```
 
-The uploaded notebook reports:
+### 📈 Recall Comparison
 
-| Method | Recall |
-|---|---:|
-| SMOTE | **0.8850** |
-| class_weight='balanced' | **0.7968** |
+The notebook experiment compares **SMOTE** with `class_weight='balanced'`:
 
-**SMOTE achieved the higher recall in the notebook experiment.**
+| 🧪 Method                    |  🎯 Recall |
+| ---------------------------- | ---------: |
+| ⚙️ **SMOTE**                 | **0.8850** |
+| ⚖️ `class_weight='balanced'` | **0.7968** |
 
----
+### 🏆 Result
+
+**SMOTE achieved the higher recall (0.8850)** in the notebook experiment.
+
+Higher recall is particularly useful for churn prediction because it helps the model identify a larger number of customers who are actually likely to **churn**.
+
 
 # 🧠 Machine Learning Models
 
+The project evaluates multiple machine learning algorithms to identify the model that performs best for **customer churn prediction**.
+
+---
+
 ## 1️⃣ KNN — K-Nearest Neighbors
 
-The project tests:
+**K-Nearest Neighbors (KNN)** is tested with different values of `k` to find the optimal number of neighboring samples.
+
+### 🔢 Values Tested
 
 ```text
 k = 1, 3, 5, 7, 9, 11, 15
 ```
 
-Notebook result:
+### 🏆 Best Result
 
-```text
-Best k = 1
-Best F1 Score = 0.2781
-```
+| 📌 Parameter     |  📊 Result |
+| ---------------- | ---------: |
+| 🔢 Best `k`      |      **1** |
+| 🎯 Best F1 Score | **0.2781** |
+
+---
 
 ## 2️⃣ SVM — Support Vector Machine
 
-RBF-kernel SVM is used and `C` is tuned:
+An **RBF-kernel Support Vector Machine (SVM)** is used, and the regularization parameter `C` is tuned to improve model performance.
+
+### ⚙️ C Values Tested
 
 ```text
 C = 0.1, 1, 10, 100
 ```
 
-Notebook tuning result:
+### 🏆 Best Result
 
-```text
-Best C = 10
-Best CV F1 = 0.8071
-```
+| 📌 Parameter        |  📊 Result |
+| ------------------- | ---------: |
+| ⚙️ Best `C`         |     **10** |
+| 🎯 Best CV F1 Score | **0.8071** |
+
+---
 
 ## 3️⃣ Decision Tree Classifier
 
-Decision Tree depth is tuned using:
+A **Decision Tree Classifier** is evaluated using different maximum tree-depth values to find the best-performing configuration.
+
+### 🌳 Depth Values Tested
 
 ```text
 3, 4, 5, 6, 7, 8, None
 ```
 
-Notebook result:
+### 🏆 Best Result
 
-```text
-Best Depth = 7
-Best F1 Score = 0.7967
-```
+| 📌 Parameter     |  📊 Result |
+| ---------------- | ---------: |
+| 🌳 Best Depth    |      **7** |
+| 🎯 Best F1 Score | **0.7967** |
 
 ---
+
+## 📊 Model Summary
+
+| 🤖 Model             | ⚙️ Best Parameter |    🎯 Best Score |
+| -------------------- | ----------------- | ---------------: |
+| 🔢 **KNN**           | `k = 1`           |    **0.2781 F1** |
+| 🧠 **SVM (RBF)**     | `C = 10`          | **0.8071 CV F1** |
+| 🌳 **Decision Tree** | `Depth = 7`       |    **0.7967 F1** |
+
+### 🏅 Best Performing Model
+
+Based on the reported notebook tuning results, **SVM with an RBF kernel and `C = 10` achieved the highest F1 score of 0.8071** among these three models.
 
 # 📊 Exploratory Data Analysis
 
@@ -364,18 +410,29 @@ The project evaluates classification models using:
 For churn prediction, **Recall is especially important** because false negatives are customers who churn but were not identified.
 
 ---
-
 # 🏆 Notebook Model Results
 
-The uploaded notebook reports:
+The following table presents the **model performance results recorded in the notebook**.
 
-| Model | Accuracy | Precision | Recall | F1 Score | ROC-AUC |
-|---|---:|---:|---:|---:|---:|
-| KNN (k=5) | 73.17% | 0.0000 | 0.0000 | 0.0000 | 0.5010 |
-| SVM (C=1) | 73.46% | 0.0000 | 0.0000 | 0.0000 | 0.4990 |
-| Decision Tree | 44.22% | 0.2731 | **0.6631** | 0.3869 | 0.4627 |
+## 📊 Model Performance Comparison
 
-> These values are the outputs recorded in the uploaded notebook. The later error-analysis section reports a SMOTE-based Decision Tree recall of **0.8850**.
+| 🤖 Model             | 🎯 Accuracy | 🎯 Precision |  🔄 Recall | ⭐ F1 Score | 📈 ROC-AUC |
+| -------------------- | ----------: | -----------: | ---------: | ---------: | ---------: |
+| 🔢 **KNN (k=5)**     |  **73.17%** |       0.0000 |     0.0000 |     0.0000 |     0.5010 |
+| 🧠 **SVM (C=1)**     |  **73.46%** |       0.0000 |     0.0000 |     0.0000 |     0.4990 |
+| 🌳 **Decision Tree** |      44.22% |       0.2731 | **0.6631** |     0.3869 |     0.4627 |
+
+---
+
+## 🔍 Key Observations
+
+* 🔢 **KNN** achieved an accuracy of **73.17%**, but its Precision, Recall, and F1 Score were **0.0000**.
+* 🧠 **SVM** achieved the highest accuracy among the three models at **73.46%**, but also produced **0.0000 Recall and F1 Score**.
+* 🌳 **Decision Tree** achieved a lower accuracy of **44.22%**, but obtained the highest Recall of **0.6631** among these three recorded results.
+* 📈 The ROC-AUC values indicate that these baseline models did not perform strongly in separating the two classes.
+
+---
+
 
 ### ⭐ SMOTE-based Decision Tree Result
 
@@ -403,8 +460,13 @@ The uploaded notebook reports:
 
 
 
-## 🌳 Decision Tree - First 3 Levels
-<img width="1570" height="812" alt="image" src="https://github.com/user-attachments/assets/5dee80e3-ef59-40f9-a76d-13fa9867df41" />
+## 🌳 Decision Tree — First 3 Levels
+
+<div style="background-color: black; padding: 20px; text-align: center;">
+
+<img width="1570" height="812" alt="Decision Tree - First 3 Levels" src="https://github.com/user-attachments/assets/5dee80e3-ef59-40f9-a76d-13fa9867df41" />
+
+</div>
 
 
 # 📊 Precision vs Recall - All 4 Models
